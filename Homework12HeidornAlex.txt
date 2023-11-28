@@ -1,3 +1,17 @@
 Alex Heidorn
 Teammates: Aidan Carlson, Anna Wolf, Samuel Draeger
 
+An argument you could make for a unique pointer is that it takes up less
+memory than a shared pointer because you only have take up 2 spaces in
+memory for the pointer itself and the object it points to, whereas a 
+shared pointer takes 3 spaces in memroy - the two previously mentioned
+spots as well as a place in memory for keeping track of the reference
+counting.
+
+Another case for the unique pointer is when you have a (rare) situation
+where you explicitly only want a single thing pointing to a particular 
+object. This could be a useful semnatical distinction when working on
+code with others to ensure that nothing else points at that object.
+This could be seen as a potential security/encapsulation measure.
+Ie, it's easier to keep a secret if it's only shared with a single person
+rather than the information being available to everyone.
